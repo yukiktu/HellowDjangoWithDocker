@@ -75,8 +75,14 @@ WSGI_APPLICATION = 'django_docker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_docker',
+        'USER': 'root',
+        'HOST': 'db',
+        'POST': 33306,
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        }
     }
 }
 
